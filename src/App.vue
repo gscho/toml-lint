@@ -6,26 +6,46 @@
         toml lint
       </a>
     </nav>
-    <h1>{{ msg }}</h1>
+    <h1>Lorem Ipsum</h1>
     <div id="code" class="input-group">
       <div class="input-group-prepend">
         <span class="input-group-text">With textarea</span>
       </div>
-      <textarea class="form-control" aria-label="With textarea" rows="30"></textarea>
+      <textarea v-model="content" class="form-control" aria-label="With textarea" rows="30"></textarea>
+    </div>
+    <div v-show="err !== ''" class="alert alert-danger" role="alert">
+      {{ err }}
     </div>
     <div id="validate">
-      <button type="button" class="btn btn-primary btn-lg">Validate</button>
-      <button type="button" class="btn btn-secondary btn-lg">Clear</button>
+      <button v-on:click="validate" type="button" class="btn btn-primary btn-lg">Validate</button>
+      <button v-on:click="clear" type="button" class="btn btn-secondary btn-lg">Clear</button>
     </div>
   </div>
 </template>
 
 <script>
+var toml = toml || require('toml-j0.4');
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Paste toml file below to lint'
+      content: '',
+      err: ''
+    }
+  },
+  methods: {
+    validate: function (event) {
+      try {
+        var data = toml.parse(this.content);
+      } catch (err) {
+          if (err instanceof toml.SyntaxError) {
+              this.err = err
+          }
+      }
+    },
+    clear: function (event) {
+      this.content = ''
+      this.err = ''
     }
   }
 }
