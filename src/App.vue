@@ -3,13 +3,13 @@
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
         <img src="build/dist/assets/toml-200.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        Toml Lint
+        TOML Lint (v0.4)
       </a>
       <a class="navbar-brand" href="https://github.com/toml-lang/toml">
         <img src="build/dist/assets/GitHub-32.png" width="30" height="30" class="d-inline-block align-top" alt="">
       </a>
     </nav>
-    <h2 class="message">Enter your toml file below</h2>
+    <h2 class="message">Enter your TOML file below</h2>
     <div class="codemirror">
       <codemirror v-model="code" :options="cmOptions" @ready="onCmReady"></codemirror>
     </div>
@@ -36,7 +36,6 @@ import 'codemirror/addon/selection/active-line.js'
 import 'codemirror/addon/edit/closebrackets.js'
 import 'codemirror/mode/clike/clike.js'
 import 'codemirror/addon/edit/matchbrackets.js'
-import 'codemirror/addon/comment/comment.js'
 import 'codemirror/addon/dialog/dialog.js'
 import 'codemirror/addon/dialog/dialog.css'
 import 'codemirror/addon/search/searchcursor.js'
@@ -82,7 +81,7 @@ export default {
     validate: function () {
       try {
         var data = toml.parse(this.code);
-        this.valid = 'Valid toml'
+        this.valid = 'Valid TOML'
         this.err = ''
         this.remove_highlight()
       } catch (err) {
@@ -136,11 +135,6 @@ h1, h2 {
 a {
   color: #42b983;
 }
-
-/*.CodeMirror {
-  height: auto;
-  min-height: 300px;
-}*/
 
 .codemirror {
   text-align: left;
