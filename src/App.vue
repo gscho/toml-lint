@@ -2,11 +2,11 @@
   <div id="app" class="container">
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
-        <img src="build/dist/assets/toml-200.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="./assets/toml-200.png" width="30" height="30" class="d-inline-block align-top" alt="">
         TOML Lint (v0.4)
       </a>
       <a class="navbar-brand" href="https://github.com/toml-lang/toml">
-        <img src="build/dist/assets/GitHub-32.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="./assets/GitHub-32.png" width="30" height="30" class="d-inline-block align-top" alt="">
       </a>
     </nav>
     <h2 class="message">Enter your TOML file below</h2>
@@ -59,7 +59,6 @@ export default {
       cmOptions: {
         autoCloseBrackets: true,
         tabSize: 4,
-        styleActiveLine: true,
         lineNumbers: true,
         line: true,
         mode: 'toml',
