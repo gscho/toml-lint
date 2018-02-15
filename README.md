@@ -1,6 +1,6 @@
 # toml-lint
 
-> A online toml linter
+> An online toml linter
 
 ## Build Setup
 
