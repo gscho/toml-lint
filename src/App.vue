@@ -40,8 +40,7 @@ import 'codemirror/addon/dialog/dialog.js'
 import 'codemirror/addon/dialog/dialog.css'
 import 'codemirror/addon/search/searchcursor.js'
 import 'codemirror/addon/search/search.js'
-
-var toml = toml || require('toml-j0.4');
+import toml from 'toml-j0.4';
 
 export default {
   components: {

@@ -2,16 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>toml-lint</title>
+    <title>TOML Lint - The TOML Validator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
-    <script src="http://codemirror.net/lib/codemirror.js"></script>
-    <script src="http://codemirror.net/addon/edit/matchbrackets.js"></script>
-    <script src="http://codemirror.net/addon/edit/continuecomment.js"></script>
-    <script src="http://codemirror.net/mode/toml/toml.js"></script>
+    <style>
+      .footer {
+         text-align: center;
+         margin: 6em;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
     <script src="/dist/build.js"></script>
+    <footer class="footer">
+      <p>Toml parser <a href="https://github.com/jakwings/toml-j0.4">toml-j0.4</a> by jakwings</p>
+      <p>&copy;<script>document.write(new Date().getFullYear());</script> Greg Schofield - <a href="https://github.com/gscho/toml-lint">GitHub</a></p>
+    </footer>
   </body>
 </html>
