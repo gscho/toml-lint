@@ -9,7 +9,7 @@
         <img src="./assets/GitHub-32.png" width="30" height="30" class="d-inline-block align-top" alt="">
       </a>
     </nav>
-    <h2 class="message">Enter your TOML file below</h2>
+    <h1 class="message">Enter your TOML file below</h1>
     <div class="codemirror">
       <codemirror v-model="code" :options="cmOptions" @ready="onCmReady"></codemirror>
     </div>
