@@ -1,14 +1,5 @@
 <template>
   <div id="app" class="container">
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="./assets/toml-200.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        TOML Lint (v0.4)
-      </a>
-      <a class="navbar-brand" href="https://github.com/toml-lang/toml">
-        <img src="./assets/GitHub-32.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      </a>
-    </nav>
     <h1 class="message">Enter your TOML file below</h1>
     <div class="codemirror">
       <codemirror v-model="code" :options="cmOptions" @ready="onCmReady"></codemirror>
