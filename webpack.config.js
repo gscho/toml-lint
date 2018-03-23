@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
@@ -8,6 +9,11 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: 'src/assets', to: 'assets' }
+    ])
+  ],
   module: {
     rules: [
       {
@@ -35,7 +41,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]',
-          outputPath: 'assets/'
+          outputPath: './build/dist/assets/'
         }
       }
     ]
