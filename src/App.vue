@@ -31,7 +31,8 @@ import 'codemirror/addon/dialog/dialog.js'
 import 'codemirror/addon/dialog/dialog.css'
 import 'codemirror/addon/search/searchcursor.js'
 import 'codemirror/addon/search/search.js'
-import toml from 'toml-j0.4';
+import * as toml from '@iarna/toml'
+import TomlError from '@iarna/toml/lib/toml-parser.js'
 
 export default {
   components: {
@@ -69,19 +70,19 @@ export default {
     },
     validate: function () {
       try {
-        var data = toml.parse(this.code);
+        var data = toml.parse(this.code)
         this.valid = 'Valid TOML'
         this.err = ''
         this.remove_highlight()
       } catch (err) {
-          if (err instanceof toml.SyntaxError) {
-              this.err = err.message
-              this.remove_highlight()
-              this.line = err.line
-              this.column = err.column
-              this.highlight_error()
-              this.valid = ''
-          }
+        if (err.constructor.name === 'TomlError') {
+            this.err = err.message
+            this.remove_highlight()
+            this.line = err.line
+            this.column = err.column
+            this.highlight_error()
+            this.valid = ''
+        }
       }
     },
     clear: function () {
