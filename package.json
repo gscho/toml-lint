@@ -10,7 +10,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules && cp -f index.html build/ && echo '/*    /index.html   200' >> build/_redirects"
   },
   "dependencies": {
-    "toml-j0.4": "^1.1.1",
+    "@iarna/toml": "^3.0.0",
     "uglifyjs-webpack-plugin": "^1.1.8",
     "vue": "^2.5.11",
     "vue-codemirror": "^4.0.3"
